@@ -23,12 +23,32 @@ repositories {
 dependencies {
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:27.1-jre'
-
+	compile group: 'org.seleniumhq.selenium', name: 'htmlunit-driver', version: '2.37.0'
+	compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+	compile group: 'com.codeborne', name: 'phantomjsdriver', version: '1.4.4'
+	
+    compile "org.projectlombok:lombok:1.16.16"
+	annotationProcessor "org.projectlombok:lombok:1.16.16"
+	compile 'org.apache.logging.log4j:log4j-slf4j-impl:2.8.2'
+	compile 'org.apache.logging.log4j:log4j-api:2.8.2'
+	compile 'org.apache.logging.log4j:log4j-core:2.8.2'
+	compile group: 'com.codeborne', name: 'phantomjsdriver', version: '1.4.4'
+	compile 'org.slf4j:log4j-over-slf4j:1.7.26'
+	compile 'org.slf4j:slf4j-api:1.7.26'
+	//json
+	compile "com.fasterxml.jackson.core:jackson-core:2.9.3"
+	compile "com.fasterxml.jackson.core:jackson-annotations:2.9.3"
+	compile "com.fasterxml.jackson.core:jackson-databind:2.9.3"
+	
+	// Use JUnit test framework
+	testImplementation 'junit:junit:4.12'
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 }
 
 application {
     // Define the main class for the application
-    mainClassName = 'com.github.hchan.slowloris.App'
+    mainClassName = 'com.github.hchan.slowloris.Sloris'
 }
+
+

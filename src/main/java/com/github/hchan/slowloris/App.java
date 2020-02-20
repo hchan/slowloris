@@ -3,12 +3,24 @@
  */
 package com.github.hchan.slowloris;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class App {
+	public static String phantomJSLocation = "/Users/henry.chan/Downloads/phantomjs-2.1.1-macosx/bin/phantomjs";
+	public static String initialUrl = "http://localhost:8080";
+	
     public String getGreeting() {
         return "Hello world.";
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        try {
+        	log.info("HEREI AM");
+			String jsessionId = HeadlessLoginToGetJsessionId.getJsessionId();
+			log.info("jsessionid="+jsessionId);
+		} catch (Exception e) {
+			log.error("",e);
+		}
     }
 }
