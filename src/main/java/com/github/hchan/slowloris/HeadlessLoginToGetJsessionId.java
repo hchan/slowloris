@@ -14,10 +14,10 @@ import org.openqa.selenium.phantomjs.PhantomJSDriver;
 public class HeadlessLoginToGetJsessionId {
 	
 	public static String getJsessionId() throws Exception {
-		File file = new File(App.phantomJSLocation);
+		File file = new File(SlowlorisApp.phantomJSLocation);
         System.setProperty("phantomjs.binary.path", file.getAbsolutePath());
 		WebDriver driver = new PhantomJSDriver();
-		driver.get(App.initialUrl);
+		driver.get(SlowlorisApp.initialUrl);
 		WebElement username = driver.findElement(By.id("username"));
 		username.sendKeys("admin@indicee.com");
 		WebElement password = driver.findElement(By.id("password"));
