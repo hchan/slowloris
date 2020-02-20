@@ -7,7 +7,12 @@ import java.util.Random;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-
+/**
+ * 
+ * @author henry.chan
+ * A thread that creates a POST request with a Content-Length: 1
+ * The header of the POST is sent, but the body is sent on a random delay later to create a Slowloris attack
+ */
 @Getter
 @Setter
 @Slf4j
@@ -25,7 +30,7 @@ public class SlowlorisThread extends Thread {
 	}
 
 	/**
-	 * creates the initial partial requests that are sent to the server
+	 * creates the initial partial request that are sent to the server
 	 */
 	private void createPartialRequest() {
 
@@ -76,7 +81,7 @@ public class SlowlorisThread extends Thread {
 			log.info("Sending partial request: " + index);
 			sendPartialRequest();
 			try {
-				Thread.sleep(10000 + new Random().nextInt(5000));
+				Thread.sleep(new Random().nextInt(15000));
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
