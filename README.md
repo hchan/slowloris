@@ -8,11 +8,11 @@ a body.  It is the delay between the Header and Body that causes the server to q
 Example:
 ```
 POST http://localhost:8080/gwtRequest HTTP/1.1
-Cookie: JSESSIONID=OZEl9pN4QscEuUzH4IqM_9S5ADQO0xf8UV7e-02O.c02yr22slvcg\
+Cookie: JSESSIONID=XXXXXXXXXOZEl9pN4QscEuUzH4IqM_9S5ADQO0xf8UV7e-02O.c02yr22slvcg\
 Host: localhost:8080
 accept: */*
 content-type: application/json; charset=UTF-8
-content-length: 375
+content-length: 1
 
 ```
 
